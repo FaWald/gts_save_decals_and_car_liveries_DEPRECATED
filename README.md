@@ -1,19 +1,19 @@
-___GTSport Save Decals___
+#GTSport Save Decals
 
 A small Tool that will help u to make a List with yours decals and Liveries from GTSport
 
-**main**
+##main
 
 Start the GUI 
 
-**csvConnection**
+##csvConnection
 
 Output to CSV-File
 
-**sqlConnection**
+##sqlConnection
 
 Output to CSV-File
 
-**seleniumConnection**
+##seleniumConnection
 
 Open in a headless-mode the browser, and then build a connection to the website where we become the data
