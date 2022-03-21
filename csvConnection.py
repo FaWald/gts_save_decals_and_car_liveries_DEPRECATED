@@ -1,8 +1,5 @@
 import time
 
-#columns = []
-arrRow = []
-columnCounter = 0;
 
 
 def print_hi(name):  # simple code to test
@@ -26,8 +23,15 @@ def create_file(path):
     return file
 
 
-def write_file(file, column, row, inhalt):
+def write_file(file, inhalt):
     file.write(inhalt)
+    pass
+
+
+def write_file_array_input(file, data):
+    for d in data:
+        file.write(d+";")
+    file.write(",")
     pass
 
 
@@ -35,15 +39,11 @@ def read_file():
     return 0
 
 
-def collectData(dataArray):
-    arrColumn = dataArray
+counterRow = 0;
 
 
 
 
-
-
-    pass
 
 
 if __name__ == '__main__':
@@ -54,8 +54,7 @@ if __name__ == '__main__':
     row = 1
     exampleData = "Test;test;test"
     exampleArray = ["Test1", "Test2", "Test3"]
-    collectData(exampleArray)
-    write_file(file, column, row, exampleData)
+    # write_file(file, column, row, exampleData)
+    write_file_array_input(file, exampleArray)
 
     read_file()
-

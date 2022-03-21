@@ -3,6 +3,7 @@ from tkinter import ttk
 
 import tk
 
+import csvConnection
 import seleniumConnection
 
 
@@ -71,10 +72,15 @@ def App(root):
 
     def InfoToCSV():
         print("Info to CSV")
+        elementArray = InfoToConsole()
+        path = "output-files/"
+        file = csvConnection.create_file(path)
+        csvConnection.write_file_array_input(file, elementArray)
         pass
 
     def InfoToSQLDB():
         print("Info to SQL-Database")
+
         pass
 
     def InfoToConsole():
@@ -94,7 +100,7 @@ def App(root):
         for i in elementArray:
             print(i)
 
-        pass
+        return elementArray
     # HTML to CSV
     buttonCSV = ttk.Button(root, text="Information to CSV", command=InfoToCSV)
     buttonCSV.pack(side="bottom", fill="x")
