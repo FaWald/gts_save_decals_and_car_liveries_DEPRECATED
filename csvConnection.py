@@ -56,5 +56,7 @@ if __name__ == '__main__':
     exampleArray = ["Test1", "Test2", "Test3"]
     # write_file(file, column, row, exampleData)
     write_file_array_input(file, exampleArray)
+    write_file_array_input(file, exampleArray)
+    quit(0)
 
     read_file()

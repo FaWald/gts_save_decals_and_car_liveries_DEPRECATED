@@ -126,8 +126,14 @@ def start_tkinter():    #starting tkinter window
     return app
 
 
+def test_CSVConnection():
+    csvConnection.print_hi("CSV-Connection")
+    pass
+
+
 if __name__ == '__main__':
     print_hi('GUI')
     test_SeleniumConnect()
+    test_CSVConnection()
     # test_tkinter()
     start_tkinter()

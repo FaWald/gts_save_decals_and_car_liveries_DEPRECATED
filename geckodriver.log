@@ -507,3 +507,24 @@ DevTools listening on ws://localhost:48273/devtools/browser/5256b625-6ca9-4bb0-8
 1647852441255	Marionette	INFO	Listening on port 44413
 Read port: 44413
 1647852441301	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1647856751261	Marionette	INFO	Stopped listening on port 44063
+1647856751335	Marionette	INFO	Stopped listening on port 33789
+1647856751397	Marionette	INFO	Stopped listening on port 44413
+
+###!!! [Parent][PContentParent] Error: Send(msgname=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1105: Error: Sqlite.jsm has been shutdown. Cannot open connection to: /tmp/rust_mozprofileJ1wb5z/protections.sqlite
+
+###!!! [Child][PContentChild] Error: RunMessage(msgname=PContent::Reply_DiscardBrowsingContext) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][PContentParent] Error: Send(msgname=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1105: Error: Sqlite.jsm has been shutdown. Cannot open connection to: /tmp/rust_mozprofile7rRtjE/protections.sqlite
+
+###!!! [Parent][PContentParent] Error: Send(msgname=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1105: Error: Sqlite.jsm has been shutdown. Cannot open connection to: /tmp/rust_mozprofileqVcQOm/protections.sqlite
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
