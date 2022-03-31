@@ -5,6 +5,7 @@ import tk
 
 import csvConnection
 import seleniumConnection
+import sqlConnection
 
 
 def print_hi(name):
@@ -80,27 +81,38 @@ def App(root):
 
     def InfoToSQLDB():
         print("Info to SQL-Database")
+        elementArray = InfoToConsole()
+        path = "output-files/"
+        db = sqlConnection.connection_database(path)
+        name = entry1.get()
+        column_name = "picture_links"
+        sqlConnection.create_table(db, name)
+        sqlConnection.insert_data(db, elementArray, name, column_name)
+        print("Done")
+
+
 
         pass
 
     def InfoToConsole():
         print("Info to Console")
-        print("_"*20)
-        print("Username/Keyword: "+entry1.get())
-        print("Livery: "+variable.get())
+        print("_" * 20)
+        print("Username/Keyword: " + entry1.get())
+        print("Livery: " + variable.get())
         url_tag = seleniumConnection.liveryToURL(variable.get())
         driver = seleniumConnection.selenium_start_driver_firefox()
         player_id = entry1.get()
         seleniumConnection.open_gts_site(driver, player_id, url_tag)
-        #searched_class = seleniumConnection.liveryToHTML(variable.get())
+        # searched_class = seleniumConnection.liveryToHTML(variable.get())
         searched_class = "sumb"
-        print("HTML-Class: "+searched_class)
+        print("HTML-Class: " + searched_class)
         elementArray = seleniumConnection.searching_element(driver, searched_class)
         print(elementArray)
         for i in elementArray:
             print(i)
 
         return elementArray
+
     # HTML to CSV
     buttonCSV = ttk.Button(root, text="Information to CSV", command=InfoToCSV)
     buttonCSV.pack(side="bottom", fill="x")
@@ -113,7 +125,7 @@ def App(root):
     return 0
 
 
-def start_tkinter():    #starting tkinter window
+def start_tkinter():  # starting tkinter window
     root = tkinter.Tk()
     root.title("GTS-Delivery-Downloader")
     root.geometry("350x250")
@@ -131,9 +143,15 @@ def test_CSVConnection():
     pass
 
 
+def test_SQLConnection():
+    sqlConnection.print_hi("SQL-Connection")
+    pass
+
+
 if __name__ == '__main__':
     print_hi('GUI')
     test_SeleniumConnect()
     test_CSVConnection()
+    test_SQLConnection()
     # test_tkinter()
     start_tkinter()

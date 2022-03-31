@@ -14,7 +14,7 @@ def write_file_array_input(file, data):
 
 
 def create_table(db, name):
-    create_table_execute = "CREATE TABLE IF NOT EXISTS " + name + "(" + "id integer PRIMARY KEY," + "picture_links text NOT NULL," + "teaser_text text," + "hashtags text" + ");"
+    create_table_execute = "CREATE TABLE IF NOT EXISTS " + name + "(" + "id integer PRIMARY KEY," + "picture_links text NOT NULL," + "teaser_text text," + "hashtags_and_keywords text" + ");"
     print(create_table_execute)
     db_cursor = db.cursor()
     db_cursor.execute(create_table_execute)
@@ -36,12 +36,15 @@ def uts():
     return now
 
 
-def insert_data(db, data, column_name):
-    values = " "
+def insert_data(db, data, name, column_name):
+    db_cursor = db.cursor()
     for d in data:
-        print(d)
-        values.join(str(d))
-    print("Values: "+values)
+        print("Data: " + d)
+        insert_into_cmd = "INSERT INTO " + name + " (" + column_name + ") VALUES('" + d + "');"
+        print(insert_into_cmd)
+        db_cursor.execute(insert_into_cmd)
+    db.commit()
+    db.close()
     pass
 
 
@@ -49,8 +52,8 @@ if __name__ == '__main__':
     print_hi('SQL-Connection')
     path = "output-files/"
     db = connection_database(path)
-    name = ""
-    create_table(db, "test")
-    data = ["test", "test", "test"]
+    name = "test"
+    create_table(db, name)
+    data = ["test1", "test2", "test3"]
     column_name = "picture_links"
-    insert_data(db, data, column_name)
+    insert_data(db, data, name ,column_name)
