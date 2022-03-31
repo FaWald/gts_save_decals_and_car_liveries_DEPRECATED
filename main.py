@@ -90,8 +90,6 @@ def App(root):
         sqlConnection.insert_data(db, elementArray, name, column_name)
         print("Done")
 
-
-
         pass
 
     def InfoToConsole():
@@ -112,6 +110,9 @@ def App(root):
             print(i)
 
         return elementArray
+
+    def savePics():
+        pass
 
     # HTML to CSV
     buttonCSV = ttk.Button(root, text="Information to CSV", command=InfoToCSV)
