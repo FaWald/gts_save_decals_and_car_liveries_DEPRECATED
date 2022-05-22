@@ -1,6 +1,7 @@
+import time
 import tkinter
 from tkinter import ttk
-
+import urllib.request
 import tk
 
 import csvConnection
@@ -112,6 +113,20 @@ def App(root):
         return elementArray
 
     def savePics():
+        print("Info to SQL-Database")
+        elementArray = InfoToConsole()
+        path = "output-files/"
+
+        def uts():
+            now = int(time.time())
+            print(now)
+            return now
+
+        uts_now = str(uts())
+
+        urllib.request.urlretrieve("http://www.digimouth.com/news/media/2011/09/google-logo.jpg", uts_now+"_"".jpg")
+
+
         pass
 
     # HTML to CSV
@@ -121,7 +136,7 @@ def App(root):
     buttonSQL = ttk.Button(root, text="Information to SQL-Database", command=InfoToSQLDB)
     buttonSQL.pack(side="bottom", fill="x")
     # HTML to Console
-    buttonConsole = ttk.Button(root, text="Information to Console", command=InfoToConsole)
+    buttonConsole = ttk.Button(root, text="Save pictures", command=savePics)
     buttonConsole.pack(side="bottom", fill="x")
     return 0
 
