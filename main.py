@@ -2,11 +2,13 @@ import time
 import tkinter
 from tkinter import ttk
 import urllib.request
-import tk
+
+import requests
 
 import csvConnection
 import seleniumConnection
 import sqlConnection
+
 
 
 def print_hi(name):
@@ -124,8 +126,12 @@ def App(root):
 
         uts_now = str(uts())
 
-        urllib.request.urlretrieve("http://www.digimouth.com/news/media/2011/09/google-logo.jpg", uts_now+"_"".jpg")
-
+        for i in elementArray:
+            response = requests.get(elementArray[i])
+            file = open(path + uts_now + "/" + uts_now + "_" + i + ".png", "wb")
+            file.write(response.content)
+            file.close()
+            print(i)
 
         pass
 

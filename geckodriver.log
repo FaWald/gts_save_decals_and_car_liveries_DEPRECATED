@@ -558,3 +558,5 @@ DevTools listening on ws://localhost:51809/devtools/browser/906529db-ea35-4d2e-b
 1648718469089	Marionette	INFO	Listening on port 42303
 Read port: 42303
 1648718469133	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1653240594419	geckodriver	INFO	Listening on 127.0.0.1:52253
+1653240594426	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "--remote-debugging-port" "58083" "-no-remote" "-profile" "/tmp/rust_mozprofileeHvLwl"
