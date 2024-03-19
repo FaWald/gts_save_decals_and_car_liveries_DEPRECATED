@@ -1,4 +1,7 @@
-# DEPRICATED 
+# DEPRECATED 
+
+Game and website is deprecated, so the tool is useless now. Maybe someone is using this code or some snippet as base for sth else or the new website for GT7.
+
 # GTSport Save Decals
 
 A small Tool that will help u to make a List with yours decals and Liveries from GTSport
