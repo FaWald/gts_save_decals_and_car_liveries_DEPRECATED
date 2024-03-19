@@ -1,8 +1,9 @@
-#GTSport Save Decals
+# DEPRICATED 
+# GTSport Save Decals
 
 A small Tool that will help u to make a List with yours decals and Liveries from GTSport
 
-##main
+## main
 
 Starts the GUI and connect the different classes to the main
 
@@ -31,17 +32,17 @@ def InfoToCSV():
 
 This two becomes the data in array from InfoToConsole() and print the new data in a csv-file or sqlite database
 
-##csvConnection
+## csvConnection
 
 Output to CSV-File
 
 First Step, create a new file with create_file(path)
 
 
-##sqlConnection
+## sqlConnection
 
 Output to CSV-File
 
-##seleniumConnection
+## seleniumConnection
 
 Open in a headless-mode the browser, and then build a connection to the website where we become the data
